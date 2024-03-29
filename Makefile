@@ -30,4 +30,9 @@ createdb:
 dropdb:
 	docker exec -it postgreslatest dropdb go_bank
 
-.PHONY: postgres createdb dropdb migrateup migratedown fmt lint vet build run
+sqlc:
+	sqlc generate
+
+.PHONY: postgres createdb dropdb migrateup migratedown fmt lint vet build run sqlc
+
+
