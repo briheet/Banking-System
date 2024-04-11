@@ -4,14 +4,15 @@ import (
 	"context"
 	"testing"
 
+	"github.com/briheet/Banking-System/util"
 	"github.com/stretchr/testify/require"
 )
 
 func TestCreateAccoount(t *testing.T) {
 	arg := CreateAccountParams{
-		Owner:    "Briheet",
-		Balance:  100,
-		Currency: "USD",
+		Owner:    util.RandomOwner(),
+		Balance:  util.RandomMoney(),
+		Currency: util.RandomCurrency(),
 	}
 
 	account, err := testQueries.CreateAccount(context.Background(), arg)
